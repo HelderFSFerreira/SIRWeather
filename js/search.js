@@ -101,6 +101,7 @@ function forecast(cidade) {
         var icon = forecastday[i].conditions;
         var tempMax = forecastday[i].high.celsius;
         var tempMin = forecastday[i].low.celsius;
+        console.log(icon);
 
         //header
 
