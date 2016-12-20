@@ -9,7 +9,7 @@ function todayForecast(cidade){
     var urllocal = cidade;
     var urltipo = ".json";
     var url = urlbase + urllocal + urltipo;
-    console.log(url);
+    //console.log(url);
 
     $.getJSON(url, function(estadotempo){
         local = estadotempo.current_observation.display_location.full;
@@ -20,8 +20,6 @@ function todayForecast(cidade){
         wind_d = estadotempo.current_observation.wind_dir;
         latitude = estadotempo.current_observation.display_location.latitude;
         longitude = estadotempo.current_observation.display_location.longitude;
-
-        console.log(icon);
 
         var classContent = $("<div/>").addClass("forecast-content");
         var classLocation = $("<div/>").addClass("location").append(local);
@@ -103,7 +101,6 @@ function forecast(cidade) {
         var icon = forecastday[i].conditions;
         var tempMax = forecastday[i].high.celsius;
         var tempMin = forecastday[i].low.celsius;
-        console.log(icon);
 
         //header
 
