@@ -97,18 +97,13 @@ function forecast(cidade) {
   $.getJSON(url, function(tempoforecast) {
 
     var forecastday = tempoforecast.forecast.simpleforecast.forecastday;
-    var auxMerda = $("#variosDias").empty();
-    console.log(auxMerda);
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 6; i++) {
 
         var diaSemana = forecastday[i].date.weekday;
         var icon = forecastday[i].conditions;
         var tempMax = forecastday[i].high.celsius;
         var tempMin = forecastday[i].low.celsius;
-        console.log(diaSemana);
         console.log(icon);
-        console.log(tempMax);
-        console.log(tempMin);
 
         //header
 
@@ -120,6 +115,7 @@ function forecast(cidade) {
         // Content
 
         var classContent = $("<div/>").addClass("forecast-content");
+
         var classIcon = $("<div/>").addClass("forecast-icon");
         var imgSrc = $("<img/>").attr({
           src : "images/icons/"+icon+".svg",
@@ -129,28 +125,23 @@ function forecast(cidade) {
         var classDegree = $("<div/>").addClass("degree").append(tempMax).append($("<sup/>").append("o"));
         var classSmall = $("<small/>").append(tempMin).append($("<sup/>").append("o"));
 
-        var aux1 = classIcon.append(imgSrc);
 
+
+        var aux1 = classIcon.append(imgSrc);
         var finalContent = classContent.append(aux1).append(classDegree).append(classSmall);
 
-        var final = $("<div/>").addClass("forecast").attr('id', 'variosDias').append(finalHeader).append(finalContent);
-
-
-
-        $(".forecast-container").append(final);
+        $("#forecast"+i).empty().append(finalHeader).append(finalContent);
     }
   })
 }
-/*<div class="forecast">
+/*<div class="forecast" id="forecast6">
   <div class="forecast-header">
-    <div class="day">Tuesday</div>
-  </div> <!-- .forecast-header -->
+    <div class="day">Sunday</div>
+  </div>
   <div class="forecast-content">
     <div class="forecast-icon">
-      <img src="images/icons/icon-3.svg" alt="" width=48>
+      <img src="images/icons/icon-14.svg" alt="" width=48>
     </div>
     <div class="degree">23<sup>o</sup>C</div>
     <small>18<sup>o</sup></small>
-  </div>
-</div>
-*/
+  </div>*/
