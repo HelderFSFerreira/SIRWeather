@@ -17,8 +17,9 @@ $(document).ready(function(){
             console.log(city);
             console.log(country);
 
-            $("#ilocal").val(city+","+country);
-            $('#bget').trigger('click');
+            //$("#ilocal").val(city+","+country);
+            //$('#bget').trigger('click');
+            todayForecast(city+","+country);
           })
         })
       }
