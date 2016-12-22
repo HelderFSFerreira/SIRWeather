@@ -42,7 +42,6 @@ function todayForecast(cidade){
           var falar = "O tempo em "+ ttsCity + "está" + ttsWeatherState+". Estão" + tempc +"graus, a humidade está a "+humidity+", e o vento sopra a "+wind_v+"km/h";
           responsiveVoice.speak(falar,"Portuguese Female");
           speak=0;
-          console.log("Dentro do search"+speak);
         }
 
 
