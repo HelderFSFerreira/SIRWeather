@@ -95,13 +95,14 @@ function forecast(cidade) {
   $.getJSON(url, function(tempoforecast) {
 
     var forecastday = tempoforecast.forecast.simpleforecast.forecastday;
-    for (var i = 0; i < 6; i++) {
+    for (var i = 1; i < 7; i++) {
 
         var diaSemana = forecastday[i].date.weekday;
+        console.log(i+" "+diaSemana);
         var icon = forecastday[i].conditions;
         var tempMax = forecastday[i].high.celsius;
         var tempMin = forecastday[i].low.celsius;
-        console.log(icon);
+        //console.log(icon);
 
         //header
 
@@ -128,7 +129,7 @@ function forecast(cidade) {
         var aux1 = classIcon.append(imgSrc);
         var finalContent = classContent.append(aux1).append(classDegree).append(classSmall);
 
-        $("#forecast"+i).empty().append(finalHeader).append(finalContent);
+        $("#forecast"+(i-1)).empty().append(finalHeader).append(finalContent);
     }
   })
 }
