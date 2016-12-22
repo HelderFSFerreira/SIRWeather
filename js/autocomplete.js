@@ -18,7 +18,10 @@ $(document).ready(function(){
 			        	response(noob);
 				    }
 		        });
-			}
+			},
+			select: function (a, b) {
+				todayForecast(b.item.value);
+    	}
 		});
 	});
 });
