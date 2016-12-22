@@ -9,7 +9,8 @@ function todayForecast(cidade){
     var urllocal = cidade;
     var urltipo = ".json";
     var url = urlbase + urllocal + urltipo;
-    //console.log(url);
+    console.log(url);
+
 
     $.getJSON(url, function(estadotempo){
         local = estadotempo.current_observation.display_location.full;
@@ -21,6 +22,14 @@ function todayForecast(cidade){
         latitude = estadotempo.current_observation.display_location.latitude;
         longitude = estadotempo.current_observation.display_location.longitude;
 
+        //Needed for TTS
+        ttsCity = estadotempo.current_observation.display_location.city;
+        ttsWeatherState = estadotempo.current_observation.weather;
+
+        var falar = "O tempo em "+ ttsCity + "está" + ttsWeatherState+". Estão" + tempc +"graus, a humidade está a "+humidity+", e o vento sopra a "+wind_v+"km/h";
+        /*var translation = translator.get("Home");
+        console.log(translation);*/
+
         var classContent = $("<div/>").addClass("forecast-content");
         var classLocation = $("<div/>").addClass("location").append(local);
         var classDegree = $("<div/>").addClass("degree");
@@ -31,6 +40,8 @@ function todayForecast(cidade){
           alt : "",
           width : 90
         });
+
+        responsiveVoice.speak(falar,"Portuguese Female");
 
 
 
