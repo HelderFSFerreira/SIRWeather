@@ -168,7 +168,7 @@ select {
 button,
 html input[type="button"],
 input[type="reset"],
-input[type="submit"] {
+input[type="button"] {
   -webkit-appearance: button;
   cursor: pointer; }
 
@@ -256,7 +256,7 @@ form textarea {
 /*
  * Reusable Components Style
  */
-.button, form input[type="submit"], form button, form input[type="reset"] {
+.button, form input[type="button"], form button, form input[type="reset"] {
   border: none;
   background: #009ad8;
   padding: 10px 20px;
@@ -1218,7 +1218,7 @@ form textarea {
     padding: 20px 50px 20px 20px;
     background: #323544;
     color: white; }
-  .find-location input[type="submit"] {
+  .find-location input[type="button"] {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -1592,14 +1592,14 @@ form textarea {
   padding: 0 5px; }
 .contact-form .row {
   margin: 0 -5px; }
-.contact-form input:not([type="submit"]), .contact-form textarea {
+.contact-form input:not([type="button"]), .contact-form textarea {
   width: 100%;
   padding: 15px;
   margin-bottom: 10px;
   color: white;
   border: 2px solid #393c48;
   background: transparent; }
-  .contact-form input:not([type="submit"]):hover, .contact-form input:not([type="submit"]):focus, .contact-form textarea:hover, .contact-form textarea:focus {
+  .contact-form input:not([type="button"]):hover, .contact-form input:not([type="button"]):focus, .contact-form textarea:hover, .contact-form textarea:focus {
     border-color: #009ad8; }
 .contact-form textarea {
   min-height: 150px; }
@@ -1653,7 +1653,7 @@ form textarea {
       background: #1e202b;
       width: 100%;
       color: white; }
-    .site-footer .subscribe-form input[type="submit"] {
+    .site-footer .subscribe-form input[type="button"] {
       position: absolute;
       right: 5px;
       top: 5px;

@@ -98,7 +98,7 @@ function forecast(cidade) {
     for (var i = 1; i < 7; i++) {
 
         var diaSemana = forecastday[i].date.weekday;
-        console.log(i+" "+diaSemana);
+        //console.log(i+" "+diaSemana);
         var icon = forecastday[i].conditions;
         var tempMax = forecastday[i].high.celsius;
         var tempMin = forecastday[i].low.celsius;
