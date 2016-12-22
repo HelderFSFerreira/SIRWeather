@@ -5,11 +5,11 @@ function handlebGetClick() {
 
 
 function todayForecast(cidade){
-    var urlbase = "http://api.wunderground.com/api/5cf397def9872e46/conditions/q/";
+    var urlbase = "http://api.wunderground.com/api/5cf397def9872e46/conditions/lang:PT/q/";
     var urllocal = cidade;
     var urltipo = ".json";
     var url = urlbase + urllocal + urltipo;
-    console.log(url);
+    //console.log(url);
 
 
     $.getJSON(url, function(estadotempo){
@@ -27,8 +27,6 @@ function todayForecast(cidade){
         ttsWeatherState = estadotempo.current_observation.weather;
 
         var falar = "O tempo em "+ ttsCity + "está" + ttsWeatherState+". Estão" + tempc +"graus, a humidade está a "+humidity+", e o vento sopra a "+wind_v+"km/h";
-        /*var translation = translator.get("Home");
-        console.log(translation);*/
 
         var classContent = $("<div/>").addClass("forecast-content");
         var classLocation = $("<div/>").addClass("location").append(local);
@@ -40,8 +38,12 @@ function todayForecast(cidade){
           alt : "",
           width : 90
         });
-
-        responsiveVoice.speak(falar,"Portuguese Female");
+        if (speak==1) {
+          var falar = "O tempo em "+ ttsCity + "está" + ttsWeatherState+". Estão" + tempc +"graus, a humidade está a "+humidity+", e o vento sopra a "+wind_v+"km/h";
+          responsiveVoice.speak(falar,"Portuguese Female");
+          speak=0;
+          console.log("Dentro do search"+speak);
+        }
 
 
 
@@ -102,6 +104,7 @@ function forecast(cidade) {
   var urllocal = cidade;
   var urltipo = ".json";
   var url = urlbase + urllocal + urltipo;
+  console.log(url);
 
   $.getJSON(url, function(tempoforecast) {
 
@@ -110,7 +113,7 @@ function forecast(cidade) {
 
         var diaSemana = forecastday[i].date.weekday;
         //console.log(i+" "+diaSemana);
-        var icon = forecastday[i].conditions;
+        var icon = forecastday[i].icon;
         var tempMax = forecastday[i].high.celsius;
         var tempMin = forecastday[i].low.celsius;
         //console.log(icon);

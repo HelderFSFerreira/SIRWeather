@@ -1,4 +1,5 @@
-
+var speak=0;
+console.log("Inicio" + speak);
 
 $(document).ready(function(){
 	$('#ilocal').on('focus', function() {
