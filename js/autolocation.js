@@ -14,11 +14,6 @@ $(document).ready(function(){
           $.getJSON(url, function(tempoforecast) {
             var city = tempoforecast.location.city;
             var country = tempoforecast.location.country_name;
-            //console.log(city);
-            //console.log(country);
-
-            //$("#ilocal").val(city+","+country);
-            //$('#bget').trigger('click');
             todayForecast(city+","+country);
           })
         })

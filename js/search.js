@@ -5,7 +5,7 @@ function handlebGetClick() {
 
 
 function todayForecast(cidade){
-    var urlbase = "http://api.wunderground.com/api/5cf397def9872e46/conditions/lang:PT/q/";
+    var urlbase = "http://api.wunderground.com/api/147e761d7ebef227/conditions/lang:PT/q/";
     var urllocal = cidade;
     var urltipo = ".json";
     var url = urlbase + urllocal + urltipo;
