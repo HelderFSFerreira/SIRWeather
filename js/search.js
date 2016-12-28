@@ -103,7 +103,7 @@ function forecast(cidade) {
   var urllocal = cidade;
   var urltipo = ".json";
   var url = urlbase + urllocal + urltipo;
-  console.log(url);
+  //console.log(url);
 
   $.getJSON(url, function(tempoforecast) {
 
